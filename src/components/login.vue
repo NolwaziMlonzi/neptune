@@ -32,6 +32,7 @@
 </template>
 
 <script>
+import doAPIRequest from "../services/TutorialDataService";
     export default {
         data:function data() {
             var data = 
@@ -62,7 +63,21 @@
         }
         ,methods:
         {
-
+            retrieveTutorials()
+            {
+                doAPIRequest.getAll()
+                    .then(response => {
+                    this.tutorials = response.data;
+                    console.log("------logged in users",response.data);
+                    })
+                    .catch(e => {
+                    console.log(e);
+                    });
+            }
+        }
+        ,mounted()
+        {
+            this.retrieveTutorials();
         }
         ,components:
         {

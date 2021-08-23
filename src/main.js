@@ -6,7 +6,7 @@ import 'vue-material/dist/vue-material.min.css'
 // import VueExcelEditor from 'vue-excel-editor'
 // import MdModalDialog from 'vue-material-modal-dialog'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
-import VueRouter from 'vue-router';
+import router from './router'
 // import Vue from 'vue'
 // import VueQRCodeComponent from 'vue-qrcode-component'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -16,8 +16,9 @@ Vue.config.productionTip = false
 Vue.use(VueMaterial)
 // Vue.use(MdModalDialog)
 // Vue.use(VueExcelEditor)
-Vue.use(VueRouter);
+// Vue.use(VueRouter);
 // Vue.component('qr-code', VueQRCodeComponent)
 new Vue({
+  router,
   render: h => h(App),
 }).$mount('#app')
